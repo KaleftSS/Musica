@@ -24,7 +24,6 @@ CREATE TABLE usuario (
     correo VARCHAR (100) NOT NULL,
 );
 
-
 CREATE TABLE cancion (
     id_cancion INT (10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nombre VARCHAR (30) NOT NULL,
@@ -55,4 +54,64 @@ CREATE TABLE usuario_playlist (
     FOREIGN KEY ( id_usuario) REFERENCES usuario ( id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_playlist) REFERENCES playlist (id_playlist) ON DELETE CASCADE
 );
+
+
+INSERT INTO artista (nombre, oyentes) VALUES
+('Fen',5000),
+('Hadd',5000),
+('Boli',5000),
+('Mino',5000),
+('Tebi',5000);
+
+INSERT INTO album (nombre, url_imagenport, id_artista) VALUES
+('POST MOTEM',".com",1),
+('DIE LIT',".com",2),
+('HWR',".com",3),
+('XCAPE',".com",4),
+('27-',".com",5);
+
+INSERT INTO playlist (nombre, duracion) VALUES
+('Alegre',5),
+('Feliz',5),
+('Enojado',5),
+('Sad',5),
+('Melancolic',5);
+
+INSERT INTO usuario (nombre, correo) VALUES
+('Kaleft',"@example.com"),
+('Salazar',"@example.com"),
+('Sanchez',"@example.com"),
+('Nose',"@example.com"),
+('Quienmas',"@example.com");
+
+INSERT INTO cancion (nombre, duracion, disquera) VALUES
+('ComeAsUAre',6,"BohemianGrove"),
+('Eso',5,"BohemianGrove"),
+('Neo Tokyo',4,"BohemianGrove"),
+('Bohemian Rapsody',8,"BohemianGrove"),
+('Dont Cry',4,"BohemianGrove");
+
+
+INSERT INTO cancion_artista (id_cancion, id_artista) VALUES
+(1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5);
+
+INSERT INTO cancion_playlist (id_cancion, id_playlist) VALUES
+(1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5);
+
+INSERT INTO usuario_playlist (id_usuario, id_playlist) VALUES
+(1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5);
+
+
 
